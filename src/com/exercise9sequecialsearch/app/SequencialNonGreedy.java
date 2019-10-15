@@ -20,6 +20,7 @@ public class SequencialNonGreedy
 		//Array declaration
 		int [] vector = new int[ELEMENTS_ARRAY];
 		
+		//Object construction
 		Random numbers = new Random(System.nanoTime());
 		Scanner input = new Scanner(System.in);
 		

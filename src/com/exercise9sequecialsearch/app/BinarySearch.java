@@ -6,32 +6,44 @@ import java.util.Scanner;
 public class BinarySearch {
 
 	public static void main(String[] args) {
+		
 		// Constants declaration
-		final int ELEMENTES_ARRAY = 100;
+		final int ELEMENTS_ARRAY = 100;
 		
 		//Variables declarations
 		int numberToFind = 0;
 		int indexFound = -1;
 		int limInf = 0;
-		int limSup = ELEMENTES_ARRAY-1;
-		int pivotal = (limSup-limInf)/2;
+		int limSup = ELEMENTS_ARRAY-1;
+		int pivotal = limInf+(limSup-limInf)/2;
 		int temp = 0;
 		
 		//Array declaration
-		int[] miArraycitu = new int[ELEMENTES_ARRAY];
+		int[] miArraycitu = new int[ELEMENTS_ARRAY];
 		
 		//Object construction
 		Random randomNumbers = new Random(System.nanoTime());
 		Scanner input = new Scanner(System.in);
 		
 		//Array initialization
-		for(int i=0; i<ELEMENTES_ARRAY; i++)
+		for(int i=0; i<ELEMENTS_ARRAY; i++)
 		{
 			miArraycitu[i] = randomNumbers.nextInt(101);
 		}
+		//Array Visualization
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
+		{
+			miArraycitu[i] = randomNumbers.nextInt(101);
+		}
+		//Array visualization
+		for(int i=0; i<ELEMENTS_ARRAY;i++)
+		{
+			System.out.print(miArraycitu[i]+" ");
+		}
+		System.out.println("");
 		
 		//Sorting algorithm
-		for(int i=0; i<ELEMENTES_ARRAY;i++)
+		for(int i=0; i<ELEMENTS_ARRAY;i++)
 		{
 			for(int j=0; j < i; j++)
 			{
@@ -45,11 +57,11 @@ public class BinarySearch {
 		}
 		System.out.println("");
 		//Array visualization
-				for(int i=0; i<ELEMENTES_ARRAY;i++)
-				{
-					System.out.print(miArraycitu[i]+" ");
-				}
-				System.out.println("");
+		for(int i=0;i<ELEMENTS_ARRAY;i++)
+		{
+			System.out.print(miArraycitu[i]+" ");
+		}
+		System.out.println("");
 		
 		//Ask the user for the number to find
 		do
@@ -61,15 +73,10 @@ public class BinarySearch {
 				System.out.println("Number must be zero or positive value!!");
 			}
 			
-			
-			System.out.println("");
-			for(int i=0; i<ELEMENTES_ARRAY; i++) {
-				System.out.print(miArraycitu[i]+" ");
-			}
-			System.out.println("");
-			
-			//Binary search algorithm
-			while(limInf<=limSup)
+		}while(numberToFind<0);
+				
+		//Binary search algorithm
+		while(limInf<=limSup)
 			{
 				pivotal = limInf+(limSup-limInf)/2;
 				if(numberToFind==miArraycitu[pivotal])
@@ -94,10 +101,6 @@ public class BinarySearch {
 			{
 				System.out.println("Element not present in the Array!!");
 			}
-		}while(numberToFind<=0);
-		
-
-		
 		input.close();
 	}
 
